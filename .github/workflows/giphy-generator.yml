@@ -4,9 +4,9 @@ on:
   issues: 
     types: [opned, editied]
   pull_request:
-     types: [opened, edited]
+    types: [opened, edited]
   issue_comment:
-      types: [created, edited]
+    types: [created, edited]
       
 jobs: 
   giphy-generator: 
