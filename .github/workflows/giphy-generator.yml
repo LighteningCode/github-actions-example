@@ -3,12 +3,12 @@ name: GIPHY generator
 on: 
   issues: 
     types: [opned, editied]
-   pull_request:
+  pull_request:
      types: [opened, edited]
-   issue_comment:
+  issue_comment:
       types: [created, edited]
       
- jobs: 
+jobs: 
   giphy-generator: 
     runs-on: ubuntu-latest
     
@@ -19,5 +19,5 @@ on:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
         with:
-          rating: "g",
+          rating: "g"
           lang: "en"
