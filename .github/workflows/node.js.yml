@@ -20,7 +20,7 @@ jobs:
           npm install
           npm run build
       - uses: actions/upload-artifact@master
-      - with: 
+        with: 
           name: webpack artifacts
           path: public/
           
@@ -37,7 +37,7 @@ jobs:
 
     steps:
     - uses: actions/download-artifact@master
-    - with: 
+      with: 
         name: webpack artifacts
         path: public
     - uses: actions/checkout@v2
