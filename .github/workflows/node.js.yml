@@ -19,9 +19,14 @@ jobs:
         run: | 
           npm install
           npm run build
+      - uses: actions/upload-artifact@master
+      - with: 
+          name: webpack artifacts
+          path: public/
           
   test:
     runs-on: ubuntu-latest
+    needs: build
     
 
     strategy:
@@ -31,6 +36,10 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - uses: actions/download-artifact@master
+    - with: 
+        name: webpack artifacts
+        path: public
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
